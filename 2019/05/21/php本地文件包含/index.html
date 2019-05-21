@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ShallowRiver</title>
+    <title>php本地文件包含，php伪协议 · ShallowRiver</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">ShallowRiver</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name"></a>
+                <a href="#" class="post-name">php本地文件包含，php伪协议</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            [Untitled Post]
+            php本地文件包含，php伪协议
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">666</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">181</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/05/13</span>
+                    <span class="post-intro-time">2019/05/21</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,27 +395,23 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="Git版本控制"><a href="#Git版本控制" class="headerlink" title="Git版本控制"></a>Git版本控制</h1><h2 id="Git的用法以及相关配置"><a href="#Git的用法以及相关配置" class="headerlink" title="Git的用法以及相关配置"></a>Git的用法以及相关配置</h2><h3 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h3><p>git提供两种连接github远程仓库的方式——https和ssh（二者的区别在于https使用时需要输入github的账号和密码而ssh则可以实现免密登陆）<br>首先我们需要把自己电脑的ssh公钥添加到github上（文件位置一般在C盘的user/.ssh目录下，没有ssh的话使用gitbash输入ssh-keygen -t rsa -C “<a href="mailto:email@email.com" target="_blank" rel="noopener">email@email.com</a>“即可，然后复制github_rsa.pub的内容到Key中点击按钮<br><img src="https://i.imgur.com/D5Aa8wA.png" alt>）<br>首先在安装好Git后需要先进行全局配置，在bash下输入如下两条命令即可</p>
-<pre><code>git config --global user.name &quot;你的github用户名&quot;   
-git config --global user.email &quot;你的邮箱&quot;   
-git config --list可以查看你的配置信息   
-</code></pre><p>接下来就可以使用git来进行版本控制了,你可以在本地建立一个仓库或者直接git clone 一个远程仓库<br>这里使用git init一个本地仓库用来学习，成功后会在页面出现一个.git的隐藏文件夹   </p>
-<pre><code>git remote -v可以查看当前绑定的远程仓库   
-没有的话使用git remote add github &quot;你的仓库https地址&quot;添加自己需要推送的远程仓库   
-</code></pre><p>！！！接下俩就可以在当前目录进行版本控制了，手动滑稽   </p>
-<pre><code>git add 文件名字   可以把文件添加到本地仓库
-git commit -m &quot;注释内容&quot;   完成添加操作后对操作内容进行注释
-</code></pre><p>接下来就可以将本地仓库的更改推送到github上了（git push -u origin master）<br>关于git push命令有好多用法，这里给出一个链接<br>下面给出一些进行版本控制的命令：<br>    git log可以查看仓库的版本<br>    git reflog可以查看曾经的修改<br>    git reset –hard 版本号(就是git log打印出来的commit:后面的一系列数字，一般输入位即可前)<br><img src="https://i.imgur.com/kFkb51z.png" alt><br><img src="https://i.imgur.com/mBQ8LfW.png" alt><br>观察自己的当前文件夹内容，是不是回到之前的版本了？，这样就完成了一次基本的版本控制使用了   </p>
-<h3 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h3><p>在linux下的用法和windows下基本一致，只不过linux一般自带git，不在需要你进行安装了。好吧，还是有点区别的——比如linux下的ssh公钥在~/.ssh目录下（笔者是用的时manjaro虚拟机,在添加ssh公钥到github时依旧出现了一些错误,ssh -T -v <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>查看了下具体信息,也没有发现问题）<br><img src="https://i.imgur.com/X0U7Zwq.png" alt><br><img src="https://i.imgur.com/XJ2i15n.png" alt><br>不知道是linux环境的问题还是虚拟机的问题（manjaro：我不背锅），欢迎大家一起讨论学习</p>
+        <h1 id="Bugku-welcome-to-bugkuctf"><a href="#Bugku-welcome-to-bugkuctf" class="headerlink" title="Bugku-welcome to bugkuctf"></a>Bugku-welcome to bugkuctf</h1><p>查看源代码，本体牵扯到两个伪协议<br>首先查看源代码如下：<br>    &lt;?php<br>    $user = $_GET[“txt”];<br>    $file = $_GET[“file”];<br>    $pass = $_GET[“password”];  </p>
+<pre><code>if(isset($user)&amp;&amp;(file_get_contents($user,&apos;r&apos;)===&quot;welcome to the bugkuctf&quot;)){  
+    echo &quot;hello admin!&lt;br&gt;&quot;;  
+    include($file); //hint.php  
+}else{  
+    echo &quot;you are not admin ! &quot;;  
+}  
+</code></pre><p>可以看到我们需要传入一个参数txt，然后服务器判断我们传的txt内容是否等于”welcome to the bugkuctf”<br>file_get_contents()函数不仅可以放文件名，还可以放php的伪协议，如果把php://input放进去的话,这个函数就会发现是一个伪协议，我们可以使用post传递的数据对这个伪协议文件写入welcom to the bugkuctf</p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://yoursite.com">ShallowRiver</a>
-            </p><p>原文链接：<a href="http://yoursite.com/2019/05/13/git/">http://yoursite.com/2019/05/13/git/</a>
-            </p><p>发表日期：<a href="http://yoursite.com/2019/05/13/git/">May 13th 2019, 7:01:53 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2019/05/13/git/">April 3rd 2019, 9:40:55 pm</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/05/21/php本地文件包含/">http://yoursite.com/2019/05/21/php本地文件包含/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/05/21/php本地文件包含/">May 21st 2019, 8:48:12 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/05/21/php本地文件包含/">May 21st 2019, 8:58:55 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -423,17 +419,12 @@ git commit -m &quot;注释内容&quot;   完成添加操作后对操作内容进
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/05/13/Scrapy爬虫学习/" title>
-                    <div class="nextTitle">[Untitled Post]</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/04/29/条件竞争/" title="ctf条件竞争">
-                    <div class="prevTitle">ctf条件竞争</div>
+                <a href="/2019/05/20/iscc/" title="iscc web6">
+                    <div class="prevTitle">iscc web6</div>
                 </a>
             
         </li>
@@ -552,7 +543,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git版本控制"><span class="toc-number">1.</span> <span class="toc-text">Git版本控制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git的用法以及相关配置"><span class="toc-number">1.1.</span> <span class="toc-text">Git的用法以及相关配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#windows"><span class="toc-number">1.1.1.</span> <span class="toc-text">windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux"><span class="toc-number">1.1.2.</span> <span class="toc-text">linux</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Bugku-welcome-to-bugkuctf"><span class="toc-number">1.</span> <span class="toc-text">Bugku-welcome to bugkuctf</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
