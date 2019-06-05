@@ -185,7 +185,7 @@
 }( typeof global !== "undefined" ? global : this ) );
 </script>
 
-    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="icon" href="/assets/xiaomai.jpg">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
     <link rel="preload" href="/scripts/main.js" as="script">
@@ -352,6 +352,40 @@ height:50vh;
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
             <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/05/密码学/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            涉及3个参数： n e d, 其中 {n, d}为私钥，{n, e}为公钥
+phi(n) = (p-1) * (q-1)d为e膜phi(n)的逆元(phi(n)为n的欧拉函数)
+ed ≡ 1 (mod phi(n))
+加密解密过程：c密文，m明文加密：c ≡ m^e(mod n)解密：m ≡ c^d(mod n)
+rsa中e为随机选取的一个数，一般为65537n由两个大素数(p,q)之积组成，公钥{n,e}为公开的，要破解rsa就得求出d，d为e模phi(n)的逆元，要求出phi(n)，必须分解n求得p,q，从而求得phi(n)=(p-1)*(q-1)
+12345678910111213...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Crpyto">Crpyto</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     
     
@@ -766,9 +800,16 @@ More...
     
     
     
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 6
+        Total : 7
         </div>
         <!-- search  -->
         
@@ -821,6 +862,20 @@ More...
     
         </ul>
     
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/06/05/密码学/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
     
@@ -843,6 +898,8 @@ More...
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Crpyto"><span class="iconfont-archer">&#xe606;</span>Crpyto</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
