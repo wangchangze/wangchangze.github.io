@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">ShallowRiver</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name"></a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">ShallowRiver</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            [Untitled Post]
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="二次注入 sql注入 代码审计">二次注入 sql注入 代码审计</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">545</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/07/16</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,70 +399,59 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/16/二次注入/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            原先遇到过二次注入的题目，当时不太清楚原理暑假有时间记录学习一下,下面找一个简单的例子帮助理解
-1.原理二次注入就是在字符型注入时，没有对用户输入的一些特殊字符进行过滤，导致用户可以先构造注入闭合单引号，再通过第二次构造注入语句，在第一次注入的基础上再进行注入
-2.代码审计下面给出一个留言板的代码123456if (isset($_POST[&apos;submit&apos;]) &amp;&amp; !empty($_POST[&apos;message&apos;]) &amp;&amp; isset($_SESSION[&apos;username&apos;])) &#123;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="二次注入 sql注入 代码审计">二次注入 sql注入 代码审计</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>原先遇到过二次注入的题目，当时不太清楚原理暑假有时间记录学习一下,下面找一个简单的例子帮助理解</p>
+<h2 id="1-原理"><a href="#1-原理" class="headerlink" title="1.原理"></a>1.原理</h2><p>二次注入就是在字符型注入时，没有对用户输入的一些特殊字符进行过滤，导致用户可以先构造注入闭合单引号，再通过第二次构造注入语句，在第一次注入的基础上再进行注入</p>
+<h2 id="2-代码审计"><a href="#2-代码审计" class="headerlink" title="2.代码审计"></a>2.代码审计</h2><p>下面给出一个留言板的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (isset($_POST[&apos;submit&apos;]) &amp;&amp; !empty($_POST[&apos;message&apos;]) &amp;&amp; isset($_SESSION[&apos;username&apos;])) &#123;</span><br><span class="line"> $clean_message = clean_input($_POST[&apos;message&apos;]); </span><br><span class="line"> $query = &quot;INSERT INTO comment(user_name,comment_text,pub_date) VALUES (&apos;&#123;$_SESSION[&apos;username&apos;]&#125;&apos;,&apos;$clean_message&apos;,now())&quot;;</span><br><span class="line"> mysql_query($query, $conn) or die(mysql_error());</span><br><span class="line"> mysql_close($conn);</span><br><span class="line"> header(&apos;Location: message.php&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>可以看到在处理POST过来的变量时只对输入的字符串加上了单引号，然后直接带入SQL语句进行查询<br>我们来看SQL语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$query = &quot;INSERT INTO comment(user_name,comment_text,pub_date) VALUES (&apos;&#123;$_SESSION[&apos;username&apos;]&#125;&apos;,&apos;$clean_message&apos;,now())&quot;;</span><br></pre></td></tr></table></figure></p>
+<p>注入的条件为$_SESSION[user_name]和$clean_message<br>那我们可以构造语句转义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$query = &quot;INSERT INTO comment(user_name,comment_text,pub_date) VALUES (&apos;xxx\&apos;,&apos;,(),1)；#&apos;,now())</span><br></pre></td></tr></table></figure></p>
+<p>那么我们可以通过注册一个名为xxx\的用户，使用这个用户留言时就会触发我们构造的payload为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">,(select admin_pass from admin limit 0,1),1);#</span><br></pre></td></tr></table></figure></p>
+<p>整个语句下来就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$query = &quot;INSERT INTO comment(user_name,comment_text,pub_date) VALUES (&apos;xxx\&apos;,&apos;,(select admin_pass from admin limit 0,1),1)；#&apos;,now())</span><br></pre></td></tr></table></figure></p>
+<p>留言板输入，就可以看到返回了管理员的账号密码了<br>这道题产生二次注入的原因就是没有对用户注册的参数进行严格的过滤</p>
+<h2 id="3-补充知识点"><a href="#3-补充知识点" class="headerlink" title="3.补充知识点"></a>3.补充知识点</h2><p>mysql_real_escape_string(stripslashes($dirty))其中dirty为我们输入的用户名</p>
+<p>mysql_real_escape_string() 函数转义 SQL 语句中使用的字符串中的特殊字符。<br>例如我们输入xxx\他就被转义成了xxx\但是由于函数的特性，他使用的是mysql的函数进行过滤，进入数据库后还是xxx\</p>
+<p>stripslashes函数的作用可以是删除$dirty变量中的\</p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/15/攻防世界Web新手WP/">
-            
-                <span>攻防世界 ctf 新手入门</span>
-        </a>
-        <div class="abstract-content">
-            早就听说攻防世界这个ctf平台，抽空做了一下上面web新手入门题目，题目与都挺基础，记录一下wp
-1.view_source没啥好说的，查看页面源代码得到flag
-2.get_post使用hackbar分别get和post两个值即可
-3.robots这个题考查robots协议，直接查看网站根目录的robots.txt，之后访问disallow的目录即可得到flag
-4.backup这题考察备份文件漏洞，访问index.php.bak下载后得到flag
-6.disabled_button这题考察前段只是，直接F12去掉按钮的disabled属性，点击获得flag
-7.simple_js输入...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">ShallowRiver</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/07/16/二次注入/">http://yoursite.com/2019/07/16/二次注入/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/07/16/二次注入/">July 16th 2019, 10:12:24 am</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/07/16/二次注入/">July 16th 2019, 6:07:48 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/07/15/攻防世界Web新手WP/" title="攻防世界 ctf 新手入门">
+                    <div class="prevTitle">攻防世界 ctf 新手入门</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -486,6 +536,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-原理"><span class="toc-number">1.</span> <span class="toc-text">1.原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-代码审计"><span class="toc-number">2.</span> <span class="toc-text">2.代码审计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-补充知识点"><span class="toc-number">3.</span> <span class="toc-text">3.补充知识点</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -792,6 +860,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

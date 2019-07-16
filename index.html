@@ -359,6 +359,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/07/16/二次注入/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            原先遇到过二次注入的题目，当时不太清楚原理暑假有时间记录学习一下,下面找一个简单的例子帮助理解
+1.原理二次注入就是在字符型注入时，没有对用户输入的一些特殊字符进行过滤，导致用户可以先构造注入闭合单引号，再通过第二次构造注入语句，在第一次注入的基础上再进行注入
+2.代码审计下面给出一个留言板的代码123456if (isset($_POST[&apos;submit&apos;]) &amp;&amp; !empty($_POST[&apos;message&apos;]) &amp;&amp; isset($_SESSION[&apos;username&apos;])) &#123;...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/16</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="二次注入 sql注入 代码审计">二次注入 sql注入 代码审计</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/07/15/攻防世界Web新手WP/">
             
                 <span>攻防世界 ctf 新手入门</span>
@@ -473,7 +504,7 @@ if(isset($user)&amp;&amp;(file_get_contents($user,&apos;r&apos;)===&quot;welcome
     <article class="index-post">
         <a class="abstract-title" href="/2019/05/13/Scrapy爬虫学习/">
             
-                <span>[Untitled Post]</span>
+                <span>scrapy</span>
         </a>
         <div class="abstract-content">
             Scrapy爬虫入门开发环境manjaro+python3
@@ -492,6 +523,12 @@ trusted-host=mirrors.aliyun.com
             </div>
             <!-- tags  -->
             
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="scrapy 爬虫">scrapy 爬虫</a>
+    
+</div>
+            
         </div>
     </article>
     
@@ -503,7 +540,7 @@ trusted-host=mirrors.aliyun.com
     <article class="index-post">
         <a class="abstract-title" href="/2019/05/13/git/">
             
-                <span>[Untitled Post]</span>
+                <span>git小计</span>
         </a>
         <div class="abstract-content">
             Git版本控制Git的用法以及相关配置windowsgit提供两种连接github远程仓库的方式——https和ssh（二者的区别在于https使用时需要输入github的账号和密码而ssh则可以实现免密登陆）首先我们需要把自己电脑的ssh公钥添加到github上（文件位置一般在C盘的user/.ssh目录下，没有ssh的话使用gitbash输入ssh-keygen -t rsa -C “email@email.com“即可，然后复制github_rsa.pub的内容到Key中点击按钮）首先在安装好Git后需要先进行全局配置，在bash下输入如下两条命令即可
@@ -515,6 +552,12 @@ git config --g...
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/13</span>
             </div>
             <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
+    
+</div>
             
         </div>
     </article>
@@ -855,9 +898,30 @@ More...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 8
+        Total : 9
         </div>
         <!-- search  -->
         
@@ -870,6 +934,11 @@ More...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/二次注入/">[Untitled Post]</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -943,12 +1012,12 @@ More...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/Scrapy爬虫学习/">[Untitled Post]</a>
+            <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/Scrapy爬虫学习/">scrapy</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/git/">[Untitled Post]</a>
+            <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/git/">git小计</a>
         </li>
     
     
@@ -962,6 +1031,12 @@ More...
     <div class="sidebar-tags-name">
     
         <span class="sidebar-tag-name" data-tags="Crpyto"><span class="iconfont-archer">&#xe606;</span>Crpyto</span>
+    
+        <span class="sidebar-tag-name" data-tags="二次注入 sql注入 代码审计"><span class="iconfont-archer">&#xe606;</span>二次注入 sql注入 代码审计</span>
+    
+        <span class="sidebar-tag-name" data-tags="scrapy 爬虫"><span class="iconfont-archer">&#xe606;</span>scrapy 爬虫</span>
+    
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
