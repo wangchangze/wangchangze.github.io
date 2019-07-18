@@ -346,27 +346,23 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/06/05/密码学/">
+        <a class="abstract-title" href="/2019/07/17/python23和pip23共存以及虚拟环境问题/">
             
-                <span>RSA</span>
+                <span>python环境的一些问题</span>
         </a>
         <div class="abstract-content">
-            http://factordb.com/涉及3个参数： n e d, 其中 {n, d}为私钥，{n, e}为公钥
-phi(n) = (p-1) * (q-1)d为e膜phi(n)的逆元(phi(n)为n的欧拉函数)
-ed ≡ 1 (mod phi(n))
-加密解密过程：c密文，m明文加密：c ≡ m^e(mod n)解密：m ≡ c^d(mod n)
-rsa中e为随机选取的一个数，一般为65537n由两个大素数(p,q)之积组成，公钥{n,e}为公开的，要破解rsa就得求出d，d为e模phi(n)的逆元，要求出phi(n)，必须分解n求得p,q，从而求得phi(n)=(p-1)*(q-...
+            之前对python与pip共存的问题做出了一些解决，参考了链接:https://blog.csdn.net/xc_zhou/article/details/80700626?tdsourcetag=s_pcqq_aiomsg但是最近学习flask需要使用虚拟环境,发现根据链接教程python无法正确创建虚拟环境，pycharm也无法使用自己在原链接基础上做了一些更改1.将python2和python3的目录均添加到环境变量2.将python2中的python.exe和pyhthonw.exe分别重命名为python2.exe和pythonw2.exel;不要对python3进行修改。3....
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/05</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/17</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="Crpyto">Crpyto</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
     
 </div>
             

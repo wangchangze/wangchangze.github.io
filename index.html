@@ -359,6 +359,65 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/07/18/flask有关pin码生成的机制/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            从今年上半年打ctf就对flask这个框架很感兴趣，大型比赛遇到的flask题目还挺多，涉及了ssti模板注入，客户端session，以及flask开启debug模式PIN码生成的命令执行等等题目，自己当时水平有限加上没有时间研究，暑假来补坑。这篇就打算写一下关于flask的PIN码（华中赛区国赛就有一道，太菜没做出来）
+1.PIN码产生的原因在测试环境中，为了方便对应用进行调试，通常在设置中会开启debug模式，当程序报错时，可以在web页面上直接进入交互式python shell对程序进行调试，但是要进入这个交互式shell必须要输入服务端生成的PIN码进行验证那么问题来了，这个PI...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="flask">flask</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/07/17/python23和pip23共存以及虚拟环境问题/">
+            
+                <span>python环境的一些问题</span>
+        </a>
+        <div class="abstract-content">
+            之前对python与pip共存的问题做出了一些解决，参考了链接:https://blog.csdn.net/xc_zhou/article/details/80700626?tdsourcetag=s_pcqq_aiomsg但是最近学习flask需要使用虚拟环境,发现根据链接教程python无法正确创建虚拟环境，pycharm也无法使用自己在原链接基础上做了一些更改1.将python2和python3的目录均添加到环境变量2.将python2中的python.exe和pyhthonw.exe分别重命名为python2.exe和pythonw2.exel;不要对python3进行修改。3....
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/07/16/二次注入/">
             
                 <span>[Untitled Post]</span>
@@ -424,12 +483,11 @@ height:50vh;
                 <span>RSA</span>
         </a>
         <div class="abstract-content">
-            涉及3个参数： n e d, 其中 {n, d}为私钥，{n, e}为公钥
+            http://factordb.com/涉及3个参数： n e d, 其中 {n, d}为私钥，{n, e}为公钥
 phi(n) = (p-1) * (q-1)d为e膜phi(n)的逆元(phi(n)为n的欧拉函数)
 ed ≡ 1 (mod phi(n))
 加密解密过程：c密文，m明文加密：c ≡ m^e(mod n)解密：m ≡ c^d(mod n)
-rsa中e为随机选取的一个数，一般为65537n由两个大素数(p,q)之积组成，公钥{n,e}为公开的，要破解rsa就得求出d，d为e模phi(n)的逆元，要求出phi(n)，必须分解n求得p,q，从而求得phi(n)=(p-1)*(q-1)
-12345678910111213...
+rsa中e为随机选取的一个数，一般为65537n由两个大素数(p,q)之积组成，公钥{n,e}为公开的，要破解rsa就得求出d，d为e模phi(n)的逆元，要求出phi(n)，必须分解n求得p,q，从而求得phi(n)=(p-1)*(q-...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -587,34 +645,11 @@ git config --g...
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/29/hello-world/">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/29</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -919,9 +954,23 @@ More...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 9
+        Total : 11
         </div>
         <!-- search  -->
         
@@ -937,12 +986,7 @@ More...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/二次注入/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/15</span><a class="archive-post-title" href="/2019/07/15/攻防世界Web新手WP/">攻防世界 ctf 新手入门</a>
+            <span class="archive-post-date">07/18</span><a class="archive-post-title" href="/2019/07/18/flask有关pin码生成的机制/">[Untitled Post]</a>
         </li>
     
     
@@ -970,21 +1014,17 @@ More...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/20</span><a class="archive-post-title" href="/2019/05/20/iscc/">iscc web6</a>
+            <span class="archive-post-date">07/17</span><a class="archive-post-title" href="/2019/07/17/python23和pip23共存以及虚拟环境问题/">python环境的一些问题</a>
         </li>
     
     
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/二次注入/">[Untitled Post]</a>
+        </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/04/29/hello-world/">Hello World</a>
+            <span class="archive-post-date">07/15</span><a class="archive-post-title" href="/2019/07/15/攻防世界Web新手WP/">攻防世界 ctf 新手入门</a>
         </li>
     
     
@@ -1012,6 +1052,11 @@ More...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/20</span><a class="archive-post-title" href="/2019/05/20/iscc/">iscc web6</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/Scrapy爬虫学习/">scrapy</a>
         </li>
     
@@ -1023,6 +1068,20 @@ More...
     
         <li class="archive-post-item">
             <span class="archive-post-date">04/29</span><a class="archive-post-title" href="/2019/04/29/条件竞争/">ctf条件竞争</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/04/29/hello-world/">Hello World</a>
         </li>
     
     </ul></div>
@@ -1037,6 +1096,10 @@ More...
         <span class="sidebar-tag-name" data-tags="scrapy 爬虫"><span class="iconfont-archer">&#xe606;</span>scrapy 爬虫</span>
     
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
+        <span class="sidebar-tag-name" data-tags="flask"><span class="iconfont-archer">&#xe606;</span>flask</span>
+    
+        <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
