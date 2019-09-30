@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ShallowRiver</title>
+    <title>cve2019-0708 · ShallowRiver</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">ShallowRiver</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">cve2019-0708</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">ShallowRiver</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            cve2019-0708
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CVE漏洞复现">CVE漏洞复现</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">267</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/09/26</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,71 +399,64 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/20/iscc/">
-            
-                <span>iscc web6</span>
-        </a>
-        <div class="abstract-content">
-            Web6 Writeup题目主要考察jwt(json web token)的知识，涉及到密码学的签名认证，要想办法伪造管理员的token来通过验证1.首先查看源码，发现了加载了common.js文件，查看该文件源码发现文件末尾定义了一个getpubkey()函数    function getpubkey(){    /    get the pubkey for test    /pubkey/{md5(username+password)}
-        /访问该路径得到公钥内容(\n记得手动转义换行)123456-----BEGIN PUBLIC KEY-----MIGfMA0G...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf-wp">ctf-wp</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="首先更新msf-最新版本的msf更新后在-opt目录下"><a href="#首先更新msf-最新版本的msf更新后在-opt目录下" class="headerlink" title="首先更新msf,最新版本的msf更新后在/opt目录下"></a>首先更新msf,最新版本的msf更新后在/opt目录下</h2><pre><code>curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb &gt; msfinstall &amp;&amp; chmod 755 msfinstall &amp;&amp; ./msfinstall
+</code></pre><h2 id="下载poc"><a href="#下载poc" class="headerlink" title="下载poc"></a>下载poc</h2><p>这里给出poc地址：<a href="https://github.com/rapid7/metasploit-framework/pull/12283/files" target="_blank" rel="noopener">https://github.com/rapid7/metasploit-framework/pull/12283/files</a></p>
+<h2 id="将clone的文件放入msf相应目录"><a href="#将clone的文件放入msf相应目录" class="headerlink" title="将clone的文件放入msf相应目录"></a>将clone的文件放入msf相应目录</h2><pre><code>mkdir /opt/metasploit-framework/embedded/framework/modules/exploits/windows/rdp
+mv cve_2019_0708_bluekeep_rce.rb /opt/metasploit-framework/embedded/framework/modules/exploits/windows/rdp/
+mv rdp.rb /opt/metasploit-framework/embedded/framework/lib/msf/core/exploit/rdp.rb
+mv rdp_scanner.rb /opt/metasploit-framework/embedded/framework/modules/auxiliary/scanner/rdp/rdp_scanner.rb
+mv cve_2019_0708_bluekeep.rb /opt/metasploit-framework/embedded/framework/modules/auxiliary/scanner/rdp/cve_2019_0708_bluekeep.rb
+</code></pre><h2 id="重载msf"><a href="#重载msf" class="headerlink" title="重载msf"></a>重载msf</h2><pre><code>msfconsole 进入msf
+reload_all 重载msf将poc加载
+search 2019——0708 查找到poc，可以看到两个选项，第一个是检查目标主机是否存在该漏洞，第二个就是我们要用的poc了
+</code></pre><p><img src="https://i.imgur.com/i2VHc1i.png" alt><br>然后查看被攻击主机的ip地址<br><img src="https://i.imgur.com/4OtBELT.png" alt><br>然后按照图示操作检查被攻击主机是否存在该cve漏洞<br><img src="https://i.imgur.com/K1CVnzr.png" alt><br>返回下图说明存在<br><img src="https://i.imgur.com/fdPB2fl.png" alt><br>然后info查看相关信息<br><img src="https://i.imgur.com/Mh6KABH.png" alt><br>设置靶机IP,PORT,攻击选项<br><img src="https://i.imgur.com/ek3N8p7.jpg" alt><br>查看结果，可以看到win7被打蓝屏了<br><img src="https://i.imgur.com/ADVTwJs.png" alt><br><img src="https://i.imgur.com/Zr4UWq7.png" alt></p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/29/条件竞争/">
-            
-                <span>ctf条件竞争</span>
-        </a>
-        <div class="abstract-content">
-            最近在做ctf中遇到了一些文件上传题目，记录一下有关条件竞争的题目所谓条件竞争就是指我们上传文件的速度和后端服务器删除我们文件的速度进行竞争，竞争成功就返回我们想要的结果(通常是构造的一些脚本文件，例如一句话木马等)
-下面给出一道例题链接如下：http://119.23.73.3:5006/web2/uploadsomething.php?filename=58758&amp;content=1
-根据提示访问他给出的链接，返回too slow！说好的flag跑哪里了呢？我们传给服务器的文件显然再我们还没有来得及访问的时候就被它给删除了，这里联想到了条件竞争，怎么办呢？很简单，一直上传文件...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">ShallowRiver</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/09/26/cve2019_0708复现/">http://yoursite.com/2019/09/26/cve2019_0708复现/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/09/26/cve2019_0708复现/">September 26th 2019, 9:25:15 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/09/26/cve2019_0708复现/">September 29th 2019, 12:19:47 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf-wp">ctf-wp</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/09/29/从HCTF2018非预期解flask的debug模式/" title="HCTF2018-Hide_and_seek">
+                    <div class="nextTitle">HCTF2018-Hide_and_seek</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/09/26/Docker学习记录/" title="Docker学习">
+                    <div class="prevTitle">Docker学习</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -487,6 +541,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先更新msf-最新版本的msf更新后在-opt目录下"><span class="toc-number">1.</span> <span class="toc-text">首先更新msf,最新版本的msf更新后在/opt目录下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载poc"><span class="toc-number">2.</span> <span class="toc-text">下载poc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将clone的文件放入msf相应目录"><span class="toc-number">3.</span> <span class="toc-text">将clone的文件放入msf相应目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重载msf"><span class="toc-number">4.</span> <span class="toc-text">重载msf</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -919,6 +991,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

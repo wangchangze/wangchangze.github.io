@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ShallowRiver</title>
+    <title>从hctf一道题中看Linux软链接 · ShallowRiver</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">ShallowRiver</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">从hctf一道题中看Linux软链接</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">ShallowRiver</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            从hctf一道题中看Linux软链接
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Linux">Linux</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.2k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/09/26</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,71 +399,63 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/20/iscc/">
-            
-                <span>iscc web6</span>
-        </a>
-        <div class="abstract-content">
-            Web6 Writeup题目主要考察jwt(json web token)的知识，涉及到密码学的签名认证，要想办法伪造管理员的token来通过验证1.首先查看源码，发现了加载了common.js文件，查看该文件源码发现文件末尾定义了一个getpubkey()函数    function getpubkey(){    /    get the pubkey for test    /pubkey/{md5(username+password)}
-        /访问该路径得到公钥内容(\n记得手动转义换行)123456-----BEGIN PUBLIC KEY-----MIGfMA0G...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf-wp">ctf-wp</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>先贴出docker github地址<br><a href="https://github.com/m0xiaoxi/CTF_Web_docker/tree/master/HCTF2018/Hideandseek" target="_blank" rel="noopener">https://github.com/m0xiaoxi/CTF_Web_docker/tree/master/HCTF2018/Hideandseek</a><br>部署完之后，还有点小问题，需要解决下，首先是上传文件存放在./uploads文件夹下，这个镜像里没有，所以要自己在app目录下建一个uploads文件夹。然后是DockerFile需要改下，加上一行内容ENV UWSGI_INI /app/it_is_hard_t0_guess_the_path_but_y0u_find_it_5f9s5b5s9.ini</p>
+<h2 id="Linux下的软链接和硬链接的不同"><a href="#Linux下的软链接和硬链接的不同" class="headerlink" title="Linux下的软链接和硬链接的不同"></a>Linux下的软链接和硬链接的不同</h2><p>Linux中包括两种链接：硬链接(Hard Link)和软链接(Soft Link)，软链接又称为符号链接（Symbolic link）。<br>我们首先来了解一下几个名词。</p>
+<h2 id="索引节点-inode"><a href="#索引节点-inode" class="headerlink" title="索引节点(inode)"></a>索引节点(inode)</h2><p>要了解链接，我们首先得了解一个概念，叫索引节点(inode)。在Linux系统中，内核为每一个新创建的文件分配一个Inode(索引结点)，每个文件都有一个惟一的inode号，我们可以将inode简单理解成一个指针，它永远指向本文件的具体存储位置。文件属性保存在索引结点里，在访问文件时，索引结点被复制到内存在，从而实现文件的快速访问。系统是通过索引节点(而不是文件名)来定位每一个文件。</p>
+<h2 id="硬链接-Hard-Link"><a href="#硬链接-Hard-Link" class="headerlink" title="硬链接(Hard Link)"></a>硬链接(Hard Link)</h2><p>硬链接说白了是一个指针，指向文件索引节点，系统并不为它重新分配inode。<br>可以用：ln命令来建立硬链接。</p>
+<p>引用<br>ln [options] existingfile newfile<br>ln [options] existingfile-list directory</p>
+<p>用法：<br>第一种为”existingfile”创建硬链接，文件名为”newfile”。<br>第二种在”directory”目录中，为” existingfile-list”中包含的所有文件创建一个同名的硬链接。<br>常用可选[options]：-f 无论”newfile”存在与否，都创建链接。-n 如果”newfile”已存在，就不创建链接。</p>
+<h2 id="软链接-Soft-Link"><a href="#软链接-Soft-Link" class="headerlink" title="软链接(Soft Link)"></a>软链接(Soft Link)</h2><p>软链接又叫符号链接，这个文件包含了另一个文件的路径名。可以是任意文件或目录，可以链接不同文件系统的文件。和win下的快捷方式差不多。<br>可以用：ln -s 命令来建立软链接。</p>
+<p>引用<br>ln -s existingfile newfile<br>ln -s existingfile-list directory</p>
+<p>下面我们用一个实例来说明硬链接和软链接。<br>ln BBB bbb<br>ln -s /proc/selt/environ<br>    ls -il<br>    total 12<br>    1713502 -rw-rw-r– 2 wcz wcz   72 9月  26 19:19 bbb<br>    1713502 -rw-rw-r– 2 wcz wcz   72 9月  26 19:19 BBB<br>    1710445 drwxrwxr-x 3 wcz wcz 4096 9月  26 18:41 flask<br>    1712730 lrwxrwxrwx 1 wcz wcz   18 9月  26 18:57 softlink -&gt; /proc/self/environ<br>    wcz@wcz-virtual-machine:~/Desktop$ cat bbb<br>    kljjslkjskjkfjksdjka122222222222222fjska;idjiejidjeijdikljfdkljsalkfj;a<br>    wcz@wcz-virtual-machine:~/Desktop$ cat BBB<br>    kljjslkjskjkfjksdjka122222222222222fjska;idjiejidjeijdikljfdkljsalkfj;a<br>创建链接后<br>1.BBB和链接数目都变为2。<br>2.BBB和bbb的inode号是一样的，都是1713502,可见二者其实是名字不同的一个文件。<br>可见进行了ln命令的操作结果：BBB和bbb是同一个文件的两个名字，它们具有同样的索引节点号和文件属性，建立文件BBB的硬链接，就是为BBB的文件索引节点在当前目录上建立一个新指针。你可以删除其中任何一个，如rm BBB，每次只会删除一个指针，链接数同时减一，只有将所有指向文件内容的指针，也即链接数减为0时，内核才会把文件内容从磁盘上删除。<br>尽管硬链接节省空间，也是Linux系统整合文件系统的传统方式，但是存在一些不足之处：<br>1.不允许给目录创建硬链接。<br>2.不可以在不同文件系统的文件间建立链接。<br>    57518 -r——– 1 wcz wcz 0 9月  26 21:09 environ<br>softlink为一个指向/proc/selt/environ的软链接，软链接克服了硬链接的不足，没有任何文件系统的限制，任何用户可以创建指向目录的符号链接。因而现在更为广泛使用，它具有更大的灵活性，甚至可以跨越不同机器、不同网络对文件进行链接。<br>可以看到solflink和源文件眼红有不同的inode号，表明他们两个是不同的额文件，但是修改任何一个文件内容相对的另外一个文件内容也会改变(可能有些绕，当成c的指针理解就好)</p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>1.硬链接原文件/链接文件公用一个inode号，说明他们是同一个文件，而软链接原文件/链接文件拥有不同的inode号，表明他们是两个不同的文件；<br>2.在文件属性上软链接明确写出了是链接文件，而硬链接没有写出来，因为在本质上硬链接文件和原文件是完全平等关系；<br>3.链接数目是不一样的，软链接的链接数目不会增加；<br>4.文件大小是不一样的，硬链接文件显示的大小是跟原文件是一样的。而这里软链接显示的大小与原文件就不同了</p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/29/条件竞争/">
-            
-                <span>ctf条件竞争</span>
-        </a>
-        <div class="abstract-content">
-            最近在做ctf中遇到了一些文件上传题目，记录一下有关条件竞争的题目所谓条件竞争就是指我们上传文件的速度和后端服务器删除我们文件的速度进行竞争，竞争成功就返回我们想要的结果(通常是构造的一些脚本文件，例如一句话木马等)
-下面给出一道例题链接如下：http://119.23.73.3:5006/web2/uploadsomething.php?filename=58758&amp;content=1
-根据提示访问他给出的链接，返回too slow！说好的flag跑哪里了呢？我们传给服务器的文件显然再我们还没有来得及访问的时候就被它给删除了，这里联想到了条件竞争，怎么办呢？很简单，一直上传文件...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">ShallowRiver</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/09/26/Linux软连接/">http://yoursite.com/2019/09/26/Linux软连接/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/09/26/Linux软连接/">September 26th 2019, 8:18:32 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/09/26/Linux软连接/">September 26th 2019, 9:13:54 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf-wp">ctf-wp</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/09/26/Docker学习记录/" title="Docker学习">
+                    <div class="nextTitle">Docker学习</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/09/24/Mysql文件读写/" title="Mysql文件读写权限">
+                    <div class="prevTitle">Mysql文件读写权限</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -487,6 +540,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux下的软链接和硬链接的不同"><span class="toc-number">1.</span> <span class="toc-text">Linux下的软链接和硬链接的不同</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引节点-inode"><span class="toc-number">2.</span> <span class="toc-text">索引节点(inode)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#硬链接-Hard-Link"><span class="toc-number">3.</span> <span class="toc-text">硬链接(Hard Link)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软链接-Soft-Link"><span class="toc-number">4.</span> <span class="toc-text">软链接(Soft Link)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区别"><span class="toc-number">5.</span> <span class="toc-text">区别</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -919,6 +990,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

@@ -346,6 +346,123 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/07/15/攻防世界Web新手WP/">
+            
+                <span>攻防世界 ctf 新手入门</span>
+        </a>
+        <div class="abstract-content">
+            早就听说攻防世界这个ctf平台，抽空做了一下上面web新手入门题目，题目与都挺基础，记录一下wp
+1.view_source没啥好说的，查看页面源代码得到flag
+2.get_post使用hackbar分别get和post两个值即可
+3.robots这个题考查robots协议，直接查看网站根目录的robots.txt，之后访问disallow的目录即可得到flag
+4.backup这题考察备份文件漏洞，访问index.php.bak下载后得到flag
+6.disabled_button这题考察前段只是，直接F12去掉按钮的disabled属性，点击获得flag
+7.simple_js输入...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/05/密码学/">
+            
+                <span>RSA</span>
+        </a>
+        <div class="abstract-content">
+            http://factordb.com/涉及3个参数： n e d, 其中 {n, d}为私钥，{n, e}为公钥
+phi(n) = (p-1) * (q-1)d为e膜phi(n)的逆元(phi(n)为n的欧拉函数)
+ed ≡ 1 (mod phi(n))
+加密解密过程：c密文，m明文加密：c ≡ m^e(mod n)解密：m ≡ c^d(mod n)
+rsa中e为随机选取的一个数，一般为65537n由两个大素数(p,q)之积组成，公钥{n,e}为公开的，要破解rsa就得求出d，d为e模phi(n)的逆元，要求出phi(n)，必须分解n求得p,q，从而求得phi(n)=(p-1)*(q-...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Crpyto">Crpyto</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/21/php本地文件包含/">
+            
+                <span>php本地文件包含，php伪协议</span>
+        </a>
+        <div class="abstract-content">
+            Bugku-welcome to bugkuctf查看源代码，本体牵扯到两个伪协议首先查看源代码如下：    &lt;?php    $user = $_GET[“txt”];    $file = $_GET[“file”];    $pass = $_GET[“password”];  
+if(isset($user)&amp;&amp;(file_get_contents($user,&apos;r&apos;)===&quot;welcome to the bugkuctf&quot;)){  
+    echo &quot;hello admin!&lt;br&gt;&quot...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/21</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/20/iscc/">
+            
+                <span>iscc web6</span>
+        </a>
+        <div class="abstract-content">
+            Web6 Writeup题目主要考察jwt(json web token)的知识，涉及到密码学的签名认证，要想办法伪造管理员的token来通过验证1.首先查看源码，发现了加载了common.js文件，查看该文件源码发现文件末尾定义了一个getpubkey()函数    function getpubkey(){    /    get the pubkey for test    /pubkey/{md5(username+password)}
+        /访问该路径得到公钥内容(\n记得手动转义换行)123456-----BEGIN PUBLIC KEY-----MIGfMA0G...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ctf-wp">ctf-wp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/13/Scrapy爬虫学习/">
             
                 <span>scrapy</span>
@@ -695,9 +812,49 @@ git config --g...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 13
+        Total : 17
         </div>
         <!-- search  -->
         
@@ -710,6 +867,26 @@ git config --g...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href="/2019/09/29/从HCTF2018非预期解flask的debug模式/">HCTF2018-Hide_and_seek</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span><a class="archive-post-title" href="/2019/09/26/cve2019_0708复现/">cve2019-0708</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span><a class="archive-post-title" href="/2019/09/26/Docker学习记录/">Docker学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span><a class="archive-post-title" href="/2019/09/26/Linux软连接/">从hctf一道题中看Linux软链接</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -727,17 +904,13 @@ git config --g...
         </li>
     
     
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span><a class="archive-post-title" href="/2019/07/18/flask有关pin码生成的机制/">有关flask开启debug模式中PIN码生成的流程</a>
+        </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/06/05/密码学/">RSA</a>
+            <span class="archive-post-date">07/17</span><a class="archive-post-title" href="/2019/07/17/python23和pip23共存以及虚拟环境问题/">python环境的一些问题</a>
         </li>
     
     
@@ -760,18 +933,22 @@ git config --g...
     
         </ul>
     
-    <div class="archive-year"> 2019 </div>
+    <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/18</span><a class="archive-post-title" href="/2019/07/18/flask有关pin码生成的机制/">有关flask开启debug模式中PIN码生成的流程</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/06/05/密码学/">RSA</a>
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/17</span><a class="archive-post-title" href="/2019/07/17/python23和pip23共存以及虚拟环境问题/">python环境的一些问题</a>
-        </li>
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -827,6 +1004,12 @@ git config --g...
         <span class="sidebar-tag-name" data-tags="Crpyto"><span class="iconfont-archer">&#xe606;</span>Crpyto</span>
     
         <span class="sidebar-tag-name" data-tags="华中赛区国赛线下赛 flask"><span class="iconfont-archer">&#xe606;</span>华中赛区国赛线下赛 flask</span>
+    
+        <span class="sidebar-tag-name" data-tags="ctf"><span class="iconfont-archer">&#xe606;</span>ctf</span>
+    
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="CVE漏洞复现"><span class="iconfont-archer">&#xe606;</span>CVE漏洞复现</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -346,55 +346,24 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/05/20/iscc/">
+        <a class="abstract-title" href="/2019/09/29/从HCTF2018非预期解flask的debug模式/">
             
-                <span>iscc web6</span>
+                <span>HCTF2018-Hide_and_seek</span>
         </a>
         <div class="abstract-content">
-            Web6 Writeup题目主要考察jwt(json web token)的知识，涉及到密码学的签名认证，要想办法伪造管理员的token来通过验证1.首先查看源码，发现了加载了common.js文件，查看该文件源码发现文件末尾定义了一个getpubkey()函数    function getpubkey(){    /    get the pubkey for test    /pubkey/{md5(username+password)}
-        /访问该路径得到公钥内容(\n记得手动转义换行)123456-----BEGIN PUBLIC KEY-----MIGfMA0G...
+            常规的题解这里就不说了，可以参考这位师傅的https://www.jianshu.com/p/d20168da7284这里我曾经写过一篇关于flask中debug模式的利用文章，这篇建议配合下面文章一起食用，效果更佳https://wangchangze.github.io/2019/07/18/flask%E6%9C%89%E5%85%B3pin%E7%A0%81%E7%94%9F%E6%88%90%E7%9A%84%E6%9C%BA%E5%88%B6/
+debug模式事实上，一个flask应用如果开启了debug模式，我们除了调试中返回debug报错，直接在应用根目录url输入/co...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/29</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf-wp">ctf-wp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/29/条件竞争/">
-            
-                <span>ctf条件竞争</span>
-        </a>
-        <div class="abstract-content">
-            最近在做ctf中遇到了一些文件上传题目，记录一下有关条件竞争的题目所谓条件竞争就是指我们上传文件的速度和后端服务器删除我们文件的速度进行竞争，竞争成功就返回我们想要的结果(通常是构造的一些脚本文件，例如一句话木马等)
-下面给出一道例题链接如下：http://119.23.73.3:5006/web2/uploadsomething.php?filename=58758&amp;content=1
-根据提示访问他给出的链接，返回too slow！说好的flag跑哪里了呢？我们传给服务器的文件显然再我们还没有来得及访问的时候就被它给删除了，这里联想到了条件竞争，怎么办呢？很简单，一直上传文件...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf-wp">ctf-wp</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="ctf">ctf</a>
     
 </div>
             

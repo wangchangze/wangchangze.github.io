@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ShallowRiver</title>
+    <title>HCTF2018-Hide_and_seek · ShallowRiver</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">ShallowRiver</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">HCTF2018-Hide_and_seek</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">ShallowRiver</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            HCTF2018-Hide_and_seek
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ctf">ctf</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">603</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/09/29</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,71 +399,55 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/20/iscc/">
-            
-                <span>iscc web6</span>
-        </a>
-        <div class="abstract-content">
-            Web6 Writeup题目主要考察jwt(json web token)的知识，涉及到密码学的签名认证，要想办法伪造管理员的token来通过验证1.首先查看源码，发现了加载了common.js文件，查看该文件源码发现文件末尾定义了一个getpubkey()函数    function getpubkey(){    /    get the pubkey for test    /pubkey/{md5(username+password)}
-        /访问该路径得到公钥内容(\n记得手动转义换行)123456-----BEGIN PUBLIC KEY-----MIGfMA0G...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf-wp">ctf-wp</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="常规的题解这里就不说了，可以参考这位师傅的https-www-jianshu-com-p-d20168da7284"><a href="#常规的题解这里就不说了，可以参考这位师傅的https-www-jianshu-com-p-d20168da7284" class="headerlink" title="常规的题解这里就不说了，可以参考这位师傅的https://www.jianshu.com/p/d20168da7284"></a>常规的题解这里就不说了，可以参考这位师傅的<a href="https://www.jianshu.com/p/d20168da7284" target="_blank" rel="noopener">https://www.jianshu.com/p/d20168da7284</a></h2><h2 id="这里我曾经写过一篇关于flask中debug模式的利用文章，这篇建议配合下面文章一起食用，效果更佳"><a href="#这里我曾经写过一篇关于flask中debug模式的利用文章，这篇建议配合下面文章一起食用，效果更佳" class="headerlink" title="这里我曾经写过一篇关于flask中debug模式的利用文章，这篇建议配合下面文章一起食用，效果更佳"></a>这里我曾经写过一篇关于flask中debug模式的利用文章，这篇建议配合下面文章一起食用，效果更佳</h2><p><a href="https://wangchangze.github.io/2019/07/18/flask%E6%9C%89%E5%85%B3pin%E7%A0%81%E7%94%9F%E6%88%90%E7%9A%84%E6%9C%BA%E5%88%B6/" target="_blank" rel="noopener">https://wangchangze.github.io/2019/07/18/flask%E6%9C%89%E5%85%B3pin%E7%A0%81%E7%94%9F%E6%88%90%E7%9A%84%E6%9C%BA%E5%88%B6/</a></p>
+<h2 id="debug模式"><a href="#debug模式" class="headerlink" title="debug模式"></a>debug模式</h2><p>事实上，一个flask应用如果开启了debug模式，我们除了调试中返回debug报错，直接在应用根目录url输入/console，可以直接进入debug调试，但是我们需要服务端生成的PIN码，经过尝试这个码是不可以爆破的，关于生成的机制可以看我曾经写的一篇文章。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>回到这个题目上，师傅们都说了flask客户端session伪造的问题，但是很少有人关注debug模式下产生的更具危险性与破坏性的命令执行。</p>
+<p>除去生成PIN码一些固定的内容，要构造PIN码我们还需要知道<br>    1.服务端主机用户<br>    2.服务器flask应用中app包的绝对路径<br>    3.machine-id<br>    4.网卡地址的</p>
+<p>服务端主机用户可以通过构造软连接来查看/etc/passwd来查看，那么flask中app报的绝对路径呢？我们知道pyhthon下载的第三方包在Linux下的存放地址是在相应的目录下的/usr/local/lib/python2.7/site-packages/app.py<br>但是我们不知道python的版本就只能爆破。不过性欲的是我们生成/proc/self/environ的软链接，压缩后上传返回的信息可以看到python版本，那么剩下的就好解决了。<br>machine-id通过构造/etc/machine-id可以解决,同样可以由/sys/class/net/eth0/address的值计算出网卡mac地址的十进制值</p>
+<p>之后使用上面的脚本就可以计算出PIN码，进入debug模式，相当于直接拿到了shell<br>什么session伪造不需要的，软连接不让查看flag？直接读取flag就行了！<br><img src="https://i.imgur.com/4PFHRdD.png" alt></p>
+<p>复现题目的时候看到了开启了dubug模式，于是联想到曾经学习过flask-pin的生成流程，就想到了这个题目，算是一个非预期解吧。<br>记录一下自己的学习过程，如有错误还请师傅们指出，一起进步学习</p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/29/条件竞争/">
-            
-                <span>ctf条件竞争</span>
-        </a>
-        <div class="abstract-content">
-            最近在做ctf中遇到了一些文件上传题目，记录一下有关条件竞争的题目所谓条件竞争就是指我们上传文件的速度和后端服务器删除我们文件的速度进行竞争，竞争成功就返回我们想要的结果(通常是构造的一些脚本文件，例如一句话木马等)
-下面给出一道例题链接如下：http://119.23.73.3:5006/web2/uploadsomething.php?filename=58758&amp;content=1
-根据提示访问他给出的链接，返回too slow！说好的flag跑哪里了呢？我们传给服务器的文件显然再我们还没有来得及访问的时候就被它给删除了，这里联想到了条件竞争，怎么办呢？很简单，一直上传文件...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">ShallowRiver</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/09/29/从HCTF2018非预期解flask的debug模式/">http://yoursite.com/2019/09/29/从HCTF2018非预期解flask的debug模式/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/09/29/从HCTF2018非预期解flask的debug模式/">September 29th 2019, 12:01:39 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/09/29/从HCTF2018非预期解flask的debug模式/">September 29th 2019, 12:51:44 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf-wp">ctf-wp</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/09/26/cve2019_0708复现/" title="cve2019-0708">
+                    <div class="prevTitle">cve2019-0708</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -487,6 +532,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常规的题解这里就不说了，可以参考这位师傅的https-www-jianshu-com-p-d20168da7284"><span class="toc-number">1.</span> <span class="toc-text">常规的题解这里就不说了，可以参考这位师傅的https://www.jianshu.com/p/d20168da7284</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#这里我曾经写过一篇关于flask中debug模式的利用文章，这篇建议配合下面文章一起食用，效果更佳"><span class="toc-number">2.</span> <span class="toc-text">这里我曾经写过一篇关于flask中debug模式的利用文章，这篇建议配合下面文章一起食用，效果更佳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#debug模式"><span class="toc-number">3.</span> <span class="toc-text">debug模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">4.</span> <span class="toc-text">题解</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -919,6 +982,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
