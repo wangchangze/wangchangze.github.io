@@ -346,6 +346,58 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/11/07/随便写写/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/07</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/11/06/php unserizlize/">
+            
+                <span>php magic function</span>
+        </a>
+        <div class="abstract-content">
+            unserialize的漏洞通常发生在magic function上,也就是我们常说的魔法函数。如果一个类定义了__wakeup()和__destruct(),则该类的实例被反序列化时，会自动调用__wakeup(),生命周期结束也就是被销毁的时候，就调用__destruct()/下面给出一个简单的demo12345678910111213141516171819202122232425&lt;?phpclass Demo&#123;    public $data;    public function __construct($data)    &#123;        $this...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="php unserialize __wakeup()">php unserialize __wakeup()</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/09/29/从HCTF2018非预期解flask的debug模式/">
             
                 <span>HCTF2018-Hide_and_seek</span>
@@ -411,8 +463,12 @@ debug模式事实上，一个flask应用如果开启了debug模式，我们除�
                 <span>Docker学习</span>
         </a>
         <div class="abstract-content">
-            镜像与容器要学习docker就必须先理解这两个概念，所谓
-
+            镜像与容器要学习docker就必须先理解这两个概念,镜像与容器1.镜像：可以认为是超轻量级的虚拟机快照2.容器：可认为是超轻量级的虚拟机，是镜像运行起来所处的可读写的状态;容器里面可安装，运行程序，还可以把安装好的程序存储起来打包成新的镜像；一个容器通常只运行一个程序
+docker相关命令安装:sudo apt install docker.io
+查看docker的信息:sudo docker info
+启动:sudo systemctl start docker
+重启:sudo systemctl restart docker
+停止:sudo systemctl stop docker...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -582,66 +638,6 @@ secure_file_priv没有设置时，则表示没有任何限制
             <div class="abstract-tags">
     
         <a class="post-tag" href="javascript:void(0);" data-tags="flask">flask</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/17/python23和pip23共存以及虚拟环境问题/">
-            
-                <span>python环境的一些问题</span>
-        </a>
-        <div class="abstract-content">
-            之前对python与pip共存的问题做出了一些解决，参考了链接:https://blog.csdn.net/xc_zhou/article/details/80700626?tdsourcetag=s_pcqq_aiomsg但是最近学习flask需要使用虚拟环境,发现根据链接教程python无法正确创建虚拟环境，pycharm也无法使用自己在原链接基础上做了一些更改1.将python2和python3的目录均添加到环境变量2.将python2中的python.exe和pyhthonw.exe分别重命名为python2.exe和pythonw2.exel;不要对python3进行修改。3....
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/07/16/二次注入/">
-            
-                <span>二次注入</span>
-        </a>
-        <div class="abstract-content">
-            原先遇到过二次注入的题目，当时不太清楚原理暑假有时间记录学习一下,下面找一个简单的例子帮助理解
-1.原理二次注入就是在字符型注入时，没有对用户输入的一些特殊字符进行过滤，导致用户可以先构造注入闭合单引号，再通过第二次构造注入语句，在第一次注入的基础上再进行注入
-2.代码审计下面给出一个留言板的代码123456if (isset($_POST[&apos;submit&apos;]) &amp;&amp; !empty($_POST[&apos;message&apos;]) &amp;&amp; isset($_SESSION[&apos;username&apos;])) &#123;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="二次注入 sql注入 代码审计">二次注入 sql注入 代码审计</a>
     
 </div>
             
@@ -946,9 +942,74 @@ secure_file_priv没有设置时，则表示没有任何限制
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 17
+        Total : 20
         </div>
         <!-- search  -->
         
@@ -959,8 +1020,41 @@ secure_file_priv没有设置时，则表示没有任何限制
     
     
     
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/06/05/密码学/">RSA</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/11/06/php unserizlize/">php magic function</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/07</span><a class="archive-post-title" href="/2019/11/07/随便写写/">[Untitled Post]</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1008,6 +1102,54 @@ secure_file_priv没有设置时，则表示没有任何限制
         </li>
     
     
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/二次注入/">二次注入</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/15</span><a class="archive-post-title" href="/2019/07/15/攻防世界Web新手WP/">攻防世界 ctf 新手入门</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2020/01/29/我的19和20/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/20</span><a class="archive-post-title" href="/2019/05/20/iscc/">iscc web6</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/Scrapy爬虫学习/">scrapy</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/git/">git小计</a>
+        </li>
+    
+    
     
     
     
@@ -1027,47 +1169,8 @@ secure_file_priv没有设置时，则表示没有任何限制
     
         </ul>
     
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/06/05/密码学/">RSA</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/二次注入/">二次注入</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/15</span><a class="archive-post-title" href="/2019/07/15/攻防世界Web新手WP/">攻防世界 ctf 新手入门</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/20</span><a class="archive-post-title" href="/2019/05/20/iscc/">iscc web6</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/Scrapy爬虫学习/">scrapy</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/git/">git小计</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -1104,6 +1207,8 @@ secure_file_priv没有设置时，则表示没有任何限制
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
         <span class="sidebar-tag-name" data-tags="CVE漏洞复现"><span class="iconfont-archer">&#xe606;</span>CVE漏洞复现</span>
+    
+        <span class="sidebar-tag-name" data-tags="php unserialize __wakeup()"><span class="iconfont-archer">&#xe606;</span>php unserialize __wakeup()</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

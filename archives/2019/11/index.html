@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>iscc web6 · ShallowRiver</title>
+    <title>ShallowRiver</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,23 +203,12 @@
 </head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/">ShallowRiver</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">iscc web6</a>
-            </div>
-    </div>
     
     <a class="home-link" href="/">ShallowRiver</a>
 </header>
@@ -231,74 +220,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            iscc web6
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class="post-intro-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf-wp">ctf-wp</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">508</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/05/20</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -399,56 +338,62 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <h1 id="Web6-Writeup"><a href="#Web6-Writeup" class="headerlink" title="Web6 Writeup"></a>Web6 Writeup</h1><p>题目主要考察jwt(json web token)的知识，涉及到密码学的签名认证，要想办法伪造管理员的token来通过验证<br>1.首先查看源码，发现了加载了common.js文件，查看该文件源码<br>发现文件末尾定义了一个getpubkey()函数<br>    function getpubkey(){<br>    /<em><br>    get the pubkey for test<br>    /pubkey/{md5(username+password)}
-        </em>/<br>访问该路径得到公钥内容(\n记得手动转义换行)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-----BEGIN PUBLIC KEY-----</span><br><span class="line">MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDMRTzM9ujkHmh42aXG0aHZk/PK</span><br><span class="line">omh6laVF+c3+D+klIjXglj7+/wxnztnhyOZpYxdtk7FfpHa3Xh4Pkpd5VivwOu1h</span><br><span class="line">Kk3XQYZeMHov4kW0yuS+5RpFV1Q2gm/NWGY52EaQmpCNFQbGNigZhu95R2OoMtuc</span><br><span class="line">IC+LX+9V/mpyKe9R3wIDAQAB</span><br><span class="line">-----END PUBLIC KEY-----</span><br></pre></td></tr></table></figure></p>
-<p>2.登陆后发现查看list(自己帖子信息)内容可以看到自己发的帖子，猜想我们要伪造管理员的身份来看帖子内容(疯狂暗示flag)<br>查看js源码后发现在点击list后我们发送了一个ajax请求，然后服务端验证我们的身份(jwt:json web token)<br><img src="https://i.imgur.com/39lNKkY.png" alt><br>抓包发现我们的token为<br>iscc19 eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoid2N6Y3oiLCJwcml2Ijoib3RoZXIifQ.j2x6PXC5LA5X5S9KDTMywqoRKPwM7AwgtjiwWZumEGIIyKng3hp65beux-ZqfZD45qlcKcLxZBZrJMTGMueh6s7U3vK1M2tLjtoi85KXu4UQAchKzvIdh9zf6kOpgcXtw8LN1m4PnggHRT7yYftRDW-rtufRev0SGaqaV9rle0M<br>由此token格式中间的两个.可以判断出采用了jwt格式的token对用户进行验证，访问https:jwt.io对token进行解析<br><img src="https://i.imgur.com/tUwolxQ.png" alt><br>可以看到前两部分分别以json信息存储了加密的算法，以及用户的信息，而第三部分是我们的签名，这点是重点，由于RSA256为非对称加密算法，我们不知道管理员的私钥，那么就不能伪造出管理员的签名信息。(RSA加密采用私钥加密，公钥解析来验证用户身份，公钥是公开的，但是每个用户的私钥都是保密的)但是我们由上面的步骤获取了公钥，那么怎么利用公钥来通过验证的，这就涉及到对称加密算法，在对称加密中，用户的签名与认证都是使用同一个密钥的，所以当我们获取了公钥信息，就可以伪造任意用户的token。那么根据jwt的HEADER与PAYLOAD以及公钥信息，我们就可以伪造出管理员的token。<br>直接给出payload<br>import jwt</p>
-
-    </article>
-    <!-- license  -->
+            <main class="main index-page">
     
-        <div class="license-wrapper">
-            <p>原文作者：<a href="http://yoursite.com">ShallowRiver</a>
-            </p><p>原文链接：<a href="http://yoursite.com/2019/05/20/iscc/">http://yoursite.com/2019/05/20/iscc/</a>
-            </p><p>发表日期：<a href="http://yoursite.com/2019/05/20/iscc/">May 20th 2019, 8:45:39 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2019/05/20/iscc/">September 24th 2019, 6:33:39 pm</a>
-            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/11/07/随便写写/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            
         </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/07</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/11/06/php unserizlize/">
+            
+                <span>php magic function</span>
+        </a>
+        <div class="abstract-content">
+            unserialize的漏洞通常发生在magic function上,也就是我们常说的魔法函数。如果一个类定义了__wakeup()和__destruct(),则该类的实例被反序列化时，会自动调用__wakeup(),生命周期结束也就是被销毁的时候，就调用__destruct()/下面给出一个简单的demo12345678910111213141516171819202122232425&lt;?phpclass Demo&#123;    public $data;    public function __construct($data)    &#123;        $this...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="php unserialize __wakeup()">php unserialize __wakeup()</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/05/21/php本地文件包含/" title="php本地文件包含，php伪协议">
-                    <div class="nextTitle">php本地文件包含，php伪协议</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/05/13/Scrapy爬虫学习/" title="scrapy">
-                    <div class="prevTitle">scrapy</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
-    
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -533,24 +478,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web6-Writeup"><span class="toc-number">1.</span> <span class="toc-text">Web6 Writeup</span></a></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1092,8 +1019,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

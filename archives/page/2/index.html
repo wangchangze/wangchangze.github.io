@@ -346,6 +346,96 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/07/18/flask有关pin码生成的机制/">
+            
+                <span>有关flask开启debug模式中PIN码生成的流程</span>
+        </a>
+        <div class="abstract-content">
+            从今年上半年打ctf就对flask这个框架很感兴趣，大型比赛遇到的flask题目还挺多，涉及了ssti模板注入，客户端session，以及flask开启debug模式PIN码生成的命令执行等等题目，自己当时水平有限加上没有时间研究，暑假来补坑。这篇就打算写一下关于flask的PIN码（华中赛区国赛就有一道，太菜没做出来）
+1.PIN码产生的原因在测试环境中，为了方便对应用进行调试，通常在设置中会开启debug模式，当程序报错时，可以在web页面上直接进入交互式python shell对程序进行调试，但是要进入这个交互式shell必须要输入服务端生成的PIN码进行验证那么问题来了，这个PI...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="flask">flask</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/07/17/python23和pip23共存以及虚拟环境问题/">
+            
+                <span>python环境的一些问题</span>
+        </a>
+        <div class="abstract-content">
+            之前对python与pip共存的问题做出了一些解决，参考了链接:https://blog.csdn.net/xc_zhou/article/details/80700626?tdsourcetag=s_pcqq_aiomsg但是最近学习flask需要使用虚拟环境,发现根据链接教程python无法正确创建虚拟环境，pycharm也无法使用自己在原链接基础上做了一些更改1.将python2和python3的目录均添加到环境变量2.将python2中的python.exe和pyhthonw.exe分别重命名为python2.exe和pythonw2.exel;不要对python3进行修改。3....
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/07/16/二次注入/">
+            
+                <span>二次注入</span>
+        </a>
+        <div class="abstract-content">
+            原先遇到过二次注入的题目，当时不太清楚原理暑假有时间记录学习一下,下面找一个简单的例子帮助理解
+1.原理二次注入就是在字符型注入时，没有对用户输入的一些特殊字符进行过滤，导致用户可以先构造注入闭合单引号，再通过第二次构造注入语句，在第一次注入的基础上再进行注入
+2.代码审计下面给出一个留言板的代码123456if (isset($_POST[&apos;submit&apos;]) &amp;&amp; !empty($_POST[&apos;message&apos;]) &amp;&amp; isset($_SESSION[&apos;username&apos;])) &#123;...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/16</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="二次注入 sql注入 代码审计">二次注入 sql注入 代码审计</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/07/15/攻防世界Web新手WP/">
             
                 <span>攻防世界 ctf 新手入门</span>
@@ -852,9 +942,74 @@ git config --g...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 17
+        Total : 20
         </div>
         <!-- search  -->
         
@@ -865,8 +1020,41 @@ git config --g...
     
     
     
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/06/05/密码学/">RSA</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/11/06/php unserizlize/">php magic function</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/07</span><a class="archive-post-title" href="/2019/11/07/随便写写/">[Untitled Post]</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -914,6 +1102,54 @@ git config --g...
         </li>
     
     
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/二次注入/">二次注入</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/15</span><a class="archive-post-title" href="/2019/07/15/攻防世界Web新手WP/">攻防世界 ctf 新手入门</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2020/01/29/我的19和20/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/20</span><a class="archive-post-title" href="/2019/05/20/iscc/">iscc web6</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/Scrapy爬虫学习/">scrapy</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/git/">git小计</a>
+        </li>
+    
+    
     
     
     
@@ -933,47 +1169,8 @@ git config --g...
     
         </ul>
     
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/06/05/密码学/">RSA</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/二次注入/">二次注入</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/15</span><a class="archive-post-title" href="/2019/07/15/攻防世界Web新手WP/">攻防世界 ctf 新手入门</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/20</span><a class="archive-post-title" href="/2019/05/20/iscc/">iscc web6</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/Scrapy爬虫学习/">scrapy</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/13</span><a class="archive-post-title" href="/2019/05/13/git/">git小计</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -1010,6 +1207,8 @@ git config --g...
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
         <span class="sidebar-tag-name" data-tags="CVE漏洞复现"><span class="iconfont-archer">&#xe606;</span>CVE漏洞复现</span>
+    
+        <span class="sidebar-tag-name" data-tags="php unserialize __wakeup()"><span class="iconfont-archer">&#xe606;</span>php unserialize __wakeup()</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
